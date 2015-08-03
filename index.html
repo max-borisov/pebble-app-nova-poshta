@@ -2,14 +2,26 @@
 <html>
 <head>
   <title>Pebble app settings page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-<form>
-  <input type="text" name="ttn" placeholder="Enter TTN" />
-  <button>Save</button>
-</form>
+<div class="container">
+  <div class="row">
+    <form>
+      <div class="form-group">
+        <label for="package-title">Package title</label>
+        <input type="text" class="form-control" id="package-title" placeholder="Package title">
+      </div>
+      <div class="form-group">
+        <label for="package-ttn">TTN (package unique number)</label>
+        <input type="text" class="form-control" id="package-ttn" placeholder="TTN">
+      </div>
+      <button type="submit" class="btn btn-default">Save</button>
+    </form>
+  </div>
+</div>
 
 </body>
 </html>
