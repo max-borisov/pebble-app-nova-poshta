@@ -1,0 +1,11 @@
+table tr td:first-child {
+  /*text-align: right;*/
+}
+
+table.table {
+  /*width: 80%;*/
+}
+
+table tr td {
+  text-align: center;
+}
