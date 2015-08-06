@@ -1,7 +1,8 @@
 var mainTable,
     newPackageRow,
     packageTitleInput,
-    packageTtnInput;
+    packageTtnInput,
+    settingsHash;
 
 $(function() {
   $('table').on('click', 'td button', function(e) {
@@ -23,5 +24,20 @@ $(function() {
 
     packageTitleInput.val('');
     packageTtnInput.val('');
+  })
+
+  $('.btn-save-settings').click(function(e) {
+    e.preventDefault();
+    settingsHash = [];
+    $('table.table tr').each(function(index, elem) {
+      if ($(elem).attr('class') != 'hidden') {
+        settingsHash.push({
+          title: $(elem).find('td.package-title')[0].innerHTML,
+          ttn: $(elem).find('td.package-ttn')[0].innerHTML
+        })
+      }
+    })
+    console.log(settingsHash);
+    location.href = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(settingsHash));
   })
 })
